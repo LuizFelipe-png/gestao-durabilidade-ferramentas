@@ -10,10 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-/**
- *
- * @author Usuario
- */
 @Controller
 public class FerramentaController {
     
@@ -29,14 +25,18 @@ public class FerramentaController {
     public String listarFerramentas(Model model) {
         List<FerramentaDTO> lista = service.listarFerramentas();
         model.addAttribute("ferramentas", lista);
-        
-        return "ferramentas";
+        return "ferramentas"; 
+    }
+    
+    @GetMapping("/ferramentas/nova")
+    public String exibirFormularioCadastro(Model model) {
+        model.addAttribute("ferramenta", new FerramentaDTO());
+        return "cadastro-ferramenta"; 
     }
     
     @PostMapping("/ferramentas/salvar")
-    public String salvarFerramenta(@ModelAttribute FerramentaDTO ferramenta) {
+    public String criarFerramenta(@ModelAttribute FerramentaDTO ferramenta) {
         service.criar(ferramenta);
-        
-        return "redirect:/ferramentas";
+        return "redirect:/ferramentas"; 
     }
 }

@@ -31,7 +31,7 @@ public class FerramentaService {
         if(f.getNome().equals("")) {
             throw new ResponseStatusException(HttpStatusCode.valueOf(400), "Nome não preenchido!");
         }
-        if(f.getVidaUtilMaxima() <= 0) {
+        if(f.getVidaUtilMax() <= 0) {
             throw new ResponseStatusException(HttpStatusCode.valueOf(400), "Vida util invalida!");
         }
         if(f.getHorasUso() < 0) {

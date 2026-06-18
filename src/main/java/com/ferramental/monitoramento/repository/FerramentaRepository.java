@@ -32,7 +32,7 @@ public class FerramentaRepository {
                     + "VALUES(?,?,?)");
             stmt.setString(1, ferramenta.getNome());
             stmt.setInt(2, ferramenta.getHorasUso());
-            stmt.setInt(3, ferramenta.getVidaUtilMaxima());
+            stmt.setInt(3, ferramenta.getVidaUtilMax());
             
             linhas = stmt.executeUpdate();
         } catch(SQLException e) {
@@ -78,7 +78,7 @@ public class FerramentaRepository {
                     + "horas_uso = ?, vida_util_maxima = ? WHERE id = ?");
             stmt.setString(1, ferramenta.getNome());
             stmt.setInt(2, ferramenta.getHorasUso());
-            stmt.setInt(3, ferramenta.getVidaUtilMaxima());
+            stmt.setInt(3, ferramenta.getVidaUtilMax());
             stmt.setInt(4, ferramenta.getId());
             
             linhas = stmt.executeUpdate();

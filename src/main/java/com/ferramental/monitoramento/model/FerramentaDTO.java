@@ -12,16 +12,16 @@ public class FerramentaDTO {
     private int id;
     private String nome;
     private int horasUso;
-    private int vidaUtilMaxima;
+    private int vidaUtilMax;
 
     public FerramentaDTO() {
     }
 
-    public FerramentaDTO(int id, String nome, int horasUso, int vidaUtilMaxima) {
+    public FerramentaDTO(int id, String nome, int horasUso, int vidaUtilMax) {
         this.id = id;
         this.nome = nome;
         this.horasUso = horasUso;
-        this.vidaUtilMaxima = vidaUtilMaxima;
+        this.vidaUtilMax = vidaUtilMax;
     }
 
     public int getId() {
@@ -48,16 +48,16 @@ public class FerramentaDTO {
         this.horasUso = horasUso;
     }
 
-    public int getVidaUtilMaxima() {
-        return vidaUtilMaxima;
+    public int getVidaUtilMax() {
+        return vidaUtilMax;
     }
 
     public void setVidaUtilMaxima(int vidaUtilMaxima) {
-        this.vidaUtilMaxima = vidaUtilMaxima;
+        this.vidaUtilMax = vidaUtilMax;
     }
     
     
     public double getPercentualDesgaste() {
-        return (horasUso / vidaUtilMaxima) * 100;
+        return (horasUso / vidaUtilMax) * 100;
     }
 }
